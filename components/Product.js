@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Image from "next/legacy/image";
 import { AiFillStar } from "react-icons/ai";
 // import { StarIcon } from "@heroicons/react/solid";
-import Currency from "react-currency-formatter";
+// import Currency from "react-currency-formatter";
 
 const Product = ({ id, title, price, description, category, image }) => {
   const MAX_RATING = 5;
@@ -35,7 +35,8 @@ const Product = ({ id, title, price, description, category, image }) => {
           ))} */}
       </div>
       <p className="text-sm my-2 line-clamp-2">{description}</p>
-      <Currency quantity={price} />
+      {/* <Currency quantity={price} /> */}
+      <p className="">${price}</p>
       <button className="my-2 rounded-sm text-sm bg-gradient-to-b from-yellow-200 to-yellow-400 border p-2 active:from-yellow-500 active:to-yellow-300 focus:outline-none border-yellow-300">
         Add to Basket
       </button>
