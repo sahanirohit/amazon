@@ -1,6 +1,8 @@
 import Image from "next/legacy/image";
 import React from "react";
 import { AiFillStar } from "react-icons/ai";
+import { useDispatch } from "react-redux";
+import { removeFromBasket, selectItems } from "../slices/basketSlice";
 
 const CheckoutProduct = ({
   id,
@@ -11,7 +13,12 @@ const CheckoutProduct = ({
   rating,
   image,
 }) => {
-  console.log(rating);
+  // console.log(rating);
+  const dispatch = useDispatch(selectItems);
+
+  const removeItemFromBasket = () => {
+    dispatch(removeFromBasket({ id }));
+  };
   return (
     <div className="w-full bg-white grid grid-cols-5 gap-4 p-5">
       <div className="">
@@ -33,7 +40,9 @@ const CheckoutProduct = ({
         <button className="my-2 rounded-sm text-sm bg-gradient-to-b from-yellow-200 to-yellow-400 border p-2 active:from-yellow-500 active:to-yellow-300 focus:outline-none border-yellow-300">
           Add to Basket
         </button>
-        <button className="my-2 rounded-sm text-sm bg-gradient-to-b from-yellow-200 to-yellow-400 border p-2 active:from-yellow-500 active:to-yellow-300 focus:outline-none border-yellow-300">
+        <button
+          onClick={removeItemFromBasket}
+          className="my-2 rounded-sm text-sm bg-gradient-to-b from-yellow-200 to-yellow-400 border p-2 active:from-yellow-500 active:to-yellow-300 focus:outline-none border-yellow-300">
           Remove from Basket
         </button>
       </div>

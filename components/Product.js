@@ -25,7 +25,7 @@ const Product = ({ id, title, price, description, category, image }) => {
     dispatch(addToBasket(product));
   };
   return (
-    <div className="relative min-h-[24rem] flex flex-col mt-5 p-10 bg-white">
+    <div className="relative min-h-[24rem] flex justify-between flex-col mt-5 p-10 bg-white">
       <p className="absolute z-40 top-2 text-xs text-gray-400 right-2">
         {category}
       </p>
