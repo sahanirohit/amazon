@@ -63,7 +63,7 @@ const Header = () => {
         </div>
       </div>
       {/* Bottom Nav Menu */}
-      <div className="flex items-center space-x-3 text-white pl-6 p-2 bg-amazon_blue-light">
+      <div className="flex text-sm sm:text-base items-center space-x-3 text-white pl-6 p-2 bg-amazon_blue-light">
         <p className="flex items-center space-x-1">
           <FaBars className="" />
           <span className="">All</span>
@@ -71,12 +71,12 @@ const Header = () => {
         <p className="">Prime Video</p>
         <p className="">Amazon Business</p>
         <p className="">Today's Deals</p>
-        <p className="hidden lg:inline-flex">Electronics</p>
-        <p className="hidden lg:inline-flex">Food & Grocery</p>
-        <p className="hidden lg:inline-flex">Prime</p>
-        <p className="hidden lg:inline-flex">Buy Again</p>
-        <p className="hidden lg:inline-flex">Shopper Toolkit</p>
-        <p className="hidden lg:inline-flex">Health & Personal Care</p>
+        <p className="hidden xl:inline-flex">Electronics</p>
+        <p className="hidden xl:inline-flex">Food & Grocery</p>
+        <p className="hidden xl:inline-flex">Prime</p>
+        <p className="hidden xl:inline-flex">Buy Again</p>
+        <p className="hidden xl:inline-flex">Shopper Toolkit</p>
+        <p className="hidden xl:inline-flex">Health & Personal Care</p>
       </div>
     </header>
   );

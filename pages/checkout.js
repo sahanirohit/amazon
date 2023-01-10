@@ -16,28 +16,35 @@ const checkout = () => {
 
       <main className="">
         <div className="flex-grow m-5 shadow-sm">
-          <div className="flex p-2">
-            <Image
-              src="https://links.papareact.com/ikj"
-              width={1020}
-              height={250}
-              objectFit="contain"
-            />
-            <div className="bg-gray-200 flex-grow p-4 space-y-4 basis-1/4">
-              <h1 className="text-2xl font-semibold">
-                Subtotal: ({items.length} items)
-              </h1>
-              <h1 className="text-xl font-bold">${total}</h1>
-              <button
-                disabled={session.status !== "authenticated"}
-                className={` ${
-                  session.status === "authenticated"
-                    ? "from-yellow-200 to-yellow-500 active:from-yellow-500 active:to-yellow-200 text-black"
-                    : "cursor-not-allowed border-gray-300 from-gray-400 to-gray-900"
-                } bg-gradient-to-b w-full relative bottom-0 py-2 border`}>
-                Proceed to checkout
-              </button>
+          <div className="flex mb-2 sm:justify-between gap-4">
+            <div className="sm:flex hidden item-center ">
+              <Image
+                src="https://links.papareact.com/ikj"
+                width={1020}
+                height={250}
+                objectFit="contain"
+              />
             </div>
+            {items.length > 0 && (
+              <div className=" bg-white p-4 min-h-[18vh] flex flex-col sm:max-w-sm w-full justify-between">
+                <div className="">
+                  <h1 className="sm:text-2xl text-left font-semibold">
+                    Subtotal: ({items.length} items)
+                  </h1>
+                  <h1 className="sm:text-xl font-bold">${total}</h1>
+                </div>
+
+                <button
+                  disabled={session.status !== "authenticated"}
+                  className={` ${
+                    session.status === "authenticated"
+                      ? ""
+                      : "cursor-not-allowed"
+                  } bg-gradient-to-b flex-none max-w-sm text-sm px-4 4 w-full from-yellow-200 to-yellow-500 active:from-yellow-500 active:to-yellow-200 text-black py-2 border`}>
+                  Proceed to checkout
+                </button>
+              </div>
+            )}
           </div>
 
           <div className=" flex flex-col p-5 space-y-10 bg-white">
